@@ -12,11 +12,11 @@ public class Iscrizione {
 
     @ManyToOne
     @JoinColumn(name = "corso_id", referencedColumnName = "id")
-    private Corso corsi;
+    private Corso corso;
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User users;
+    private User user;
 
     public Iscrizione() {}
 
@@ -36,19 +36,19 @@ public class Iscrizione {
         this.dataIscrizione = dataIscrizione;
     }
 
-    public Corso getCorsi() {
-        return corsi;
+    public Corso getCorso() {
+        return corso;
     }
 
-    public void setCorsi(Corso corsi) {
-        this.corsi = corsi;
+    public void setCorso(Corso corso) {
+        this.corso = corso;
     }
 
-    public User getUsers() {
-        return users;
+    public User getUser() {
+        return user;
     }
 
-    public void setUsers(User users) {
-        this.users = users;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

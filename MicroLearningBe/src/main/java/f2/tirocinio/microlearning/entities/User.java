@@ -14,7 +14,7 @@ public class User {
     private Boolean isAdmin = false;
     private Boolean isLoggedIn = false;
 
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "user")
     private List<Iscrizione> iscrizioni;
 
     public User() {}

@@ -14,10 +14,10 @@ public class Corso {
     private String nome;
     private String categoria;
 
-    @OneToMany(mappedBy = "corsi")
+    @OneToMany(mappedBy = "corso")
     List<Lezione> lezioni;
 
-    @OneToMany(mappedBy = "corsi")
+    @OneToMany(mappedBy = "corso")
     List<Iscrizione> iscrizioni;
 
     public Corso() { }
