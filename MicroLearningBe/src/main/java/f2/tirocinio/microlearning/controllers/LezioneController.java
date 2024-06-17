@@ -12,19 +12,12 @@ import f2.tirocinio.microlearning.daos.LezioneDao;
 @RestController
 @CrossOrigin
 public class LezioneController {
-	
-	
+
 	@Autowired 
 	LezioneDao lDao;
 	
-	
 	@GetMapping("/lezioni/{id}")
 	public ResponseEntity<Object> getLezioni(@PathVariable Integer id){
-		
 		return ResponseEntity.status(200).body(lDao.listaLezioni(id));
 	}
-	
-	
-	
-	
 }
