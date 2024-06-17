@@ -8,6 +8,8 @@ public class Activity {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
+    private Long tempoIniziale;
+    private Long tempoFinale;
     private Long tempoTotale;
     private Boolean completato;
 
@@ -32,8 +34,24 @@ public class Activity {
     public void setId(Integer id) {
         this.id = id;
     }
+    
+    public Long getTempoIniziale() {
+		return tempoIniziale;
+	}
 
-    public Long getTempoTotale() {
+	public void setTempoIniziale(Long tempoIniziale) {
+		this.tempoIniziale = tempoIniziale;
+	}
+
+	public Long getTempoFinale() {
+		return tempoFinale;
+	}
+
+	public void setTempoFinale(Long tempoFinale) {
+		this.tempoFinale = tempoFinale;
+	}
+
+	public Long getTempoTotale() {
         return tempoTotale;
     }
 

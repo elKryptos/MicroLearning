@@ -16,6 +16,7 @@ public class Corso {
     private String categoria;
 
     @OneToMany(mappedBy = "corso")
+    @JsonIgnore
     List<Lezione> lezioni;
 
     @OneToMany(mappedBy = "corso")
