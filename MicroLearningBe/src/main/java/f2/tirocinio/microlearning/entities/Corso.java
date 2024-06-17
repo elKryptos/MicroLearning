@@ -1,5 +1,6 @@
 package f2.tirocinio.microlearning.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -18,7 +19,11 @@ public class Corso {
     List<Lezione> lezioni;
 
     @OneToMany(mappedBy = "corso")
+    @JsonIgnore
     List<Iscrizione> iscrizioni;
+
+    @OneToMany(mappedBy = "corso")
+    List<Activity> activities;
 
     public Corso() { }
 
@@ -60,5 +65,13 @@ public class Corso {
 
     public void setIscrizioni(List<Iscrizione> iscrizioni) {
         this.iscrizioni = iscrizioni;
+    }
+
+    public List<Activity> getActivities() {
+        return activities;
+    }
+
+    public void setActivities(List<Activity> activities) {
+        this.activities = activities;
     }
 }

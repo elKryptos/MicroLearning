@@ -14,4 +14,5 @@ public interface CorsoDao extends JpaRepository<Corso, Integer> {
 
     @Query(value = "select * from corsi where categoria = :categoria and nome = :nome", nativeQuery = true)
     List<Corso> findByCategoriaAndNome(String categoria , String nome);
+
 }
