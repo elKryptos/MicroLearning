@@ -15,7 +15,7 @@ public class Lezione {
 
     @ManyToOne
     @JoinColumn(name = "corso_id", referencedColumnName = "id")
-    private Corso corsi;
+    private Corso corso;
 
     public Lezione() { }
 
@@ -59,11 +59,11 @@ public class Lezione {
         this.tempo = tempo;
     }
 
-    public Corso getCorsi() {
-        return corsi;
+    public Corso getCorso() {
+        return corso;
     }
 
-    public void setCorsi(Corso corsi) {
-        this.corsi = corsi;
+    public void setCorso(Corso corso) {
+        this.corso = corso;
     }
 }
