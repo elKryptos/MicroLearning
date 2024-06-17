@@ -2,6 +2,8 @@ package f2.tirocinio.microlearning.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "lezioni")
 public class Lezione {
@@ -16,6 +18,9 @@ public class Lezione {
     @ManyToOne
     @JoinColumn(name = "corso_id", referencedColumnName = "id")
     private Corso corso;
+
+    @OneToMany(mappedBy = "lezione")
+    private List<Activity> activities;
 
     public Lezione() { }
 
@@ -65,5 +70,13 @@ public class Lezione {
 
     public void setCorso(Corso corso) {
         this.corso = corso;
+    }
+
+    public List<Activity> getActivities() {
+        return activities;
+    }
+
+    public void setActivities(List<Activity> activities) {
+        this.activities = activities;
     }
 }
