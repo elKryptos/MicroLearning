@@ -9,6 +9,6 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface LezioneDao extends JpaRepository<Lezione, Integer> {
 	
-	@Query(value ="SELECT * FROM lessons where title = :title", nativeQuery = true)
-	List<Lezione> getTitle(String title);
+	@Query(value ="SELECT * FROM lezioni where nome = :nome", nativeQuery = true)
+	List<Lezione> getNome(String nome);
 }

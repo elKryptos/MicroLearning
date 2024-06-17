@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
+
+
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -16,7 +19,10 @@ public class User {
 
     @OneToMany(mappedBy = "users")
     private List<Iscrizione> iscrizioni;
-
+    
+	@OneToMany(mappedBy = "user")
+	List<Attivita> attivitaUsers;
+	
     public User() {}
 
 	public Integer getId() {
@@ -59,7 +65,15 @@ public class User {
 		this.iscrizioni = iscrizioni;
 	}
 
+	public List<Attivita> getAttivitaUsers() {
+		return attivitaUsers;
+	}
 
+	public void setAttivitaUsers(List<Attivita> attivitaUsers) {
+		this.attivitaUsers = attivitaUsers;
+	}
+
+	
     
     
     

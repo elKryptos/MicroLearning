@@ -1,5 +1,6 @@
 package f2.tirocinio.microlearning.entities;
 
+import java.util.List;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,8 +17,14 @@ public class Lezione {
     @ManyToOne
     @JoinColumn(name = "corso_id", referencedColumnName = "id")
     private Corso corsi;
+    
+	@OneToMany(mappedBy = "lezione")
+	private List<Attivita> attivitaLezioni;
 
-    public Lezione() { }
+
+
+	public Lezione() {
+	}
 
 	public Integer getId() {
 		return id;
@@ -59,13 +66,24 @@ public class Lezione {
 		this.tempo = tempo;
 	}
 
-	public Corso getCorsi() {
+	public Corso getCorso() {
 		return corsi;
 	}
 
-	public void setCorsi(Corso corsi) {
+	public void setCorso(Corso corsi) {
 		this.corsi = corsi;
 	}
+
+	public List<Attivita> getAttivitaLezioni() {
+		return attivitaLezioni;
+	}
+
+	public void setAttivitaLezioni(List<Attivita> attivitaLezioni) {
+		this.attivitaLezioni = attivitaLezioni;
+	}
+
+
+	
     
     
 

@@ -1,5 +1,6 @@
 package f2.tirocinio.microlearning.entities;
 
+import java.util.List;
 import jakarta.persistence.*;
 
 @Entity
@@ -17,6 +18,7 @@ public class Iscrizione {
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User users;
+    
 
     public Iscrizione() {}
 
@@ -51,7 +53,9 @@ public class Iscrizione {
 	public void setUsers(User users) {
 		this.users = users;
 	}
+
     
+	
     
     
     
