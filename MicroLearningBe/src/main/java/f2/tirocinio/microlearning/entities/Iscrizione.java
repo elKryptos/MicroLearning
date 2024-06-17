@@ -19,4 +19,41 @@ public class Iscrizione {
     private User users;
 
     public Iscrizione() {}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Long getDataIscrizione() {
+		return dataIscrizione;
+	}
+
+	public void setDataIscrizione(Long dataIscrizione) {
+		this.dataIscrizione = dataIscrizione;
+	}
+
+	public Corso getCorsi() {
+		return corsi;
+	}
+
+	public void setCorsi(Corso corsi) {
+		this.corsi = corsi;
+	}
+
+	public User getUsers() {
+		return users;
+	}
+
+	public void setUsers(User users) {
+		this.users = users;
+	}
+    
+    
+    
+    
+    
 }
