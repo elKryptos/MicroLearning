@@ -3,7 +3,10 @@ package f2.tirocinio.microlearning.controllers;
 import f2.tirocinio.microlearning.daos.CorsoDao;
 import f2.tirocinio.microlearning.daos.IscrizioneDao;
 import f2.tirocinio.microlearning.daos.UserDao;
+import f2.tirocinio.microlearning.dtos.IscrizioneDto;
+import f2.tirocinio.microlearning.entities.Corso;
 import f2.tirocinio.microlearning.entities.Iscrizione;
+import f2.tirocinio.microlearning.entities.User;
 import f2.tirocinio.microlearning.responses.BackendResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -39,8 +42,16 @@ public class IscrizioneController {
         return ResponseEntity.status(200).body(iscrizioni);
     }
 
-    @PostMapping("/iscrizioni")
-    public ResponseEntity<Object> addIscrizione(@RequestBody Iscrizione iscrizione){
-        return null;
+    @PostMapping("/iscrizione")
+    public ResponseEntity<Object> register(@RequestBody IscrizioneDto iscrizioneDto){
+        User user = uDao.findById(iscrizioneDto.getUserId()).orElseThrow(() -> new RuntimeException("Utente non trovato"));
+        Corso corso = cDao.findById(iscrizioneDto.getCorsoId()).orElseThrow(() -> new RuntimeException("Corso non trovato"));
+
+        Iscrizione iscrizione = new Iscrizione();
+        iscrizione.setUser(user);
+        iscrizione.setCorso(corso);
+        iscrizione.setDataIscrizione(System.currentTimeMillis());
+        iDao.save(iscrizione);
+        return ResponseEntity.status(200).body(new BackendResponse("Iscritto al corso correttamente"));
     }
 }
