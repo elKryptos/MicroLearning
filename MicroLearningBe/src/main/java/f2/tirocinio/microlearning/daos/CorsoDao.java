@@ -17,4 +17,10 @@ public interface CorsoDao extends JpaRepository<Corso, Integer> {
     @Query(value = "select distinct categoria from corsi", nativeQuery = true)
     List<String> findDistinctCategorie();
 
+    @Query(value = "select * from corsi where nome = :nome", nativeQuery = true)
+    List<Corso> findByNome(String nome);
+
+    @Query(value = "select * from corsi where corsoId = :corsoId", nativeQuery = true)
+    List<Corso> findByCorsoId(String corsoId);
+
 }
