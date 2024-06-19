@@ -1,7 +1,6 @@
 package f2.tirocinio.microlearning.controllers;
 
 import f2.tirocinio.microlearning.daos.CorsoDao;
-import f2.tirocinio.microlearning.entities.Corso;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
