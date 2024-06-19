@@ -8,6 +8,8 @@ import { Corsi } from './corsi';
 })
 export class ApiService {
 
+  private Url = "http://localhost:8080";
+
   constructor(private http: HttpClient) { }
 
   getCategorie(): Observable<string[]>{
@@ -16,6 +18,14 @@ export class ApiService {
 
   getAll(): Observable<Corsi[]>{
     return this.http.get<Corsi[]>("http://localhost:8080/all")
+  }
+
+  // getInsideCategoria(): Observable<Corsi[]>{
+  //   return this.http.get<Corsi[]>("http://localhost:8080/{categoria}")
+  // }
+
+  getInsideCategoria(categoria: string): Observable<Corsi[]>{
+    return this.http.get<Corsi[]>("http://localhost:8080/" + categoria)
   }
 
 }
