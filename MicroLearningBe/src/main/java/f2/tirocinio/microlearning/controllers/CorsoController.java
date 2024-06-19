@@ -17,6 +17,10 @@ public class CorsoController {
     CorsoDao cDao;
 
     @GetMapping("/all")
+    public ResponseEntity<Object> all(){
+        return ResponseEntity.status(200).body(cDao.findAll());
+    }
+    @GetMapping("/categorie")
     public ResponseEntity<Object> allCategorie(){
         List<String> categorie = cDao.findDistinctCategorie();
         return ResponseEntity.status(200).body(categorie);
