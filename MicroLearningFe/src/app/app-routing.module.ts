@@ -4,12 +4,14 @@ import { CategorieComponent } from './categorie/categorie.component';
 import { CorsiComponent } from './corsi/corsi.component';
 import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { CorsiByCategoriaComponent } from './corsi-by-categoria/corsi-by-categoria.component';
 
 const routes: Routes = [
   {path: "categorie", component: CategorieComponent}, 
   {path: "corsi", component: CorsiComponent}, 
   {path: "login", component: LoginComponent}, 
-  {path: "homepage", component: HomepageComponent}
+  {path: "homepage", component: HomepageComponent}, 
+  {path: "corsiByCategoria", component: CorsiByCategoriaComponent}
 ];
 
 @NgModule({
