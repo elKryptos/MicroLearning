@@ -9,6 +9,7 @@ import { CorsiComponent } from './corsi/corsi.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CorsiByCategoriaComponent } from './corsi-by-categoria/corsi-by-categoria.component';
+import { LezioniComponent } from './lezioni/lezioni.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CorsiByCategoriaComponent } from './corsi-by-categoria/corsi-by-categor
     CorsiComponent,
     CategorieComponent,
     HomepageComponent,
-    CorsiByCategoriaComponent
+    CorsiByCategoriaComponent,
+    LezioniComponent
   ],
   imports: [
     BrowserModule,
