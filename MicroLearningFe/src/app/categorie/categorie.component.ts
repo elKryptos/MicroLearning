@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Corsi } from '../corsi';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categorie',
@@ -9,11 +10,9 @@ import { Corsi } from '../corsi';
 })
 export class CategorieComponent {
 
-  corsi!: Corsi[];
-  categorie: string[] =[];
+  categorie: string[] = [];
 
-
-  constructor(private service: ApiService) { }
+  constructor(private service: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.service.getCategorie().subscribe((data) => {
@@ -24,8 +23,11 @@ export class CategorieComponent {
   }
 
   getAll(categoria: string): void {
-    this.service.getInsideCategoria(categoria).subscribe((data) => {
-      console.log(data);
-    })
+      
+      this.service.getInsideCategoria("storia").subscribe((data) => {
+        this.router.navigate(["/corsi", categoria])
+        console.log(data)
+      })
+      
   }
 }

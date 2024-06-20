@@ -13,19 +13,15 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getCategorie(): Observable<string[]>{
-    return this.http.get<string[]>("http://localhost:8080/categorie")
+    return this.http.get<string[]>(`${this.Url}/categorie`)
   }
 
   getAll(): Observable<Corsi[]>{
-    return this.http.get<Corsi[]>("http://localhost:8080/all")
+    return this.http.get<Corsi[]>(`${this.Url}/all`)
   }
 
-  // getInsideCategoria(): Observable<Corsi[]>{
-  //   return this.http.get<Corsi[]>("http://localhost:8080/{categoria}")
-  // }
-
   getInsideCategoria(categoria: string): Observable<Corsi[]>{
-    return this.http.get<Corsi[]>("http://localhost:8080/" + categoria)
+    return this.http.get<Corsi[]>(`${this.Url}/${categoria}`)
   }
 
 }
