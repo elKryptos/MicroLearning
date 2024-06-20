@@ -15,7 +15,7 @@ export class ApiService {
   getCategorie(): Observable<string[]>{
     return this.http.get<string[]>(`${this.Url}/categorie`)
   }
-
+  
   getAll(): Observable<Corsi[]>{
     return this.http.get<Corsi[]>(`${this.Url}/all`)
   }
