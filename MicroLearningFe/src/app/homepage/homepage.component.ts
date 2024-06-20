@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Corsi } from '../corsi';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-homepage',
@@ -6,5 +8,24 @@ import { Component } from '@angular/core';
   styleUrl: './homepage.component.css'
 })
 export class HomepageComponent {
+
+
+  listCorsi : Corsi[]=[]
+  selectCorsi !: Corsi []
+
+  constructor(private service:ApiService){}
+
+  ngOnInit():void{
+    this.service.getAll().subscribe((data)=>{
+      this.listCorsi = data
+      this.selectCorsi = data
+    }) 
+  }
+
+  selectedCorso(event: any){
+    let searchTerm = event.target.value
+    this.selectCorsi = this.listCorsi.filter(el=> el.nome.toLowerCase().startsWith(searchTerm.toLowerCase()) || el.categoria.toLowerCase().startsWith(searchTerm.toLowerCase()))
+    
+  }
 
 }
