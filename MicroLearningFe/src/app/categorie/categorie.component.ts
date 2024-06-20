@@ -25,7 +25,7 @@ export class CategorieComponent {
   getAll(categoria: string): void {
       
       this.service.getInsideCategoria("storia").subscribe((data) => {
-        this.router.navigate(["/corsi", categoria])
+        this.router.navigate(["/categorie", categoria])
         console.log(data)
       })
       
