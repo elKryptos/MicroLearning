@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CategorieComponent {
 
-  categorie: string[] =[];
+  categorie: string[] = [];
 
   constructor(private service: ApiService, private router: Router) { }
 
@@ -25,6 +25,7 @@ export class CategorieComponent {
   getAll(categoria: string): void {
       
       this.service.getInsideCategoria("storia").subscribe((data) => {
+        this.router.navigate(["/corsi", categoria])
         console.log(data)
       })
       

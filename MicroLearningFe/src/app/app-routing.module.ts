@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: "corsi", component: CorsiComponent}, 
   {path: "login", component: LoginComponent}, 
   {path: "homepage", component: HomepageComponent}, 
-  {path: "corsiByCategoria", component: CorsiByCategoriaComponent}
+  {path: "corsi/:categoria", component: CorsiByCategoriaComponent}
 ];
 
 @NgModule({
