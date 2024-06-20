@@ -10,6 +10,7 @@ import { ApiService } from '../api.service';
 export class CorsiByCategoriaComponent {
 
   corsi!: Corsi[]
+  categoria!: string 
 
   constructor(private service: ApiService) { }
 
