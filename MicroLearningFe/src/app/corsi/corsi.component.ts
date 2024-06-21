@@ -10,6 +10,7 @@ import { ApiService } from '../api.service';
 export class CorsiComponent {
 
   corsi!: Corsi[];
+  lezioni!: any[];
 
   constructor(private service: ApiService) { }
 
