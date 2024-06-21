@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Corsi } from '../corsi';
 import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-homepage',
@@ -12,8 +14,11 @@ export class HomepageComponent {
 
   listCorsi : Corsi[]=[]
   selectCorsi !: Corsi []
+  categoria : string [] = []
 
-  constructor(private service:ApiService){}
+  constructor(private service:ApiService, private router : Router){
+
+  }
 
   ngOnInit():void{
     this.service.getAll().subscribe((data)=>{
@@ -25,8 +30,17 @@ export class HomepageComponent {
 
   selectedCorso(event: any){
     let searchTerm = event.target.value
-    this.selectCorsi = this.listCorsi.filter(el=> el.nome.toLowerCase().startsWith(searchTerm.toLowerCase()) || el.categoria.toLowerCase().startsWith(searchTerm.toLowerCase()))
-    
+    this.selectCorsi = this.listCorsi.filter(el=> {
+      el.nome.toLowerCase().startsWith(searchTerm.toLowerCase()) || 
+      el.categoria.toLowerCase().startsWith(searchTerm.toLowerCase())
+    })
   }
+
+  CategoriaClick(categoria: string){
+    
+    this.router.navigate(["/categorie", categoria])
+
+  }
+
 
 }

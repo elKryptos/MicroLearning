@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Corsi } from '../corsi';
 import { ApiService } from '../api.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -21,4 +21,5 @@ export class CorsiByCategoriaComponent {
       this.corsi = data
     })
   }
+
 }
