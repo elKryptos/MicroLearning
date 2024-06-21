@@ -19,6 +19,7 @@ export class HomepageComponent {
     this.service.getAll().subscribe((data)=>{
       this.listCorsi = data
       this.selectCorsi = data
+      console.log(data)
     }) 
   }
 

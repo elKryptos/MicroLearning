@@ -17,17 +17,11 @@ export class CategorieComponent {
   ngOnInit(): void {
     this.service.getCategorie().subscribe((data) => {
       this.categorie = data
-      console.log(this.categorie)
-      console.log(data)
     });
   }
 
   getAll(categoria: string): void {
-      
-      this.service.getInsideCategoria("storia").subscribe((data) => {
-        this.router.navigate(["/categorie", categoria])
-        console.log(data)
-      })
-      
+    this.router.navigate(["/categorie", categoria])
   }
-}
+  
+} 

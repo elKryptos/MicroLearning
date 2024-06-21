@@ -1,5 +1,6 @@
 package f2.tirocinio.microlearning.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public class Lezione {
 
     @ManyToOne
     @JoinColumn(name = "corso_id", referencedColumnName = "id")
+    @JsonBackReference
     private Corso corso;
 
     @OneToMany(mappedBy = "lezione")

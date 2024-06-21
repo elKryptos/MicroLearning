@@ -16,8 +16,8 @@ public class LezioneController {
 	@Autowired 
 	LezioneDao lDao;
 	
-	@GetMapping("/lezioni/{id}")
-	public ResponseEntity<Object> getLezioni(@PathVariable Integer id){
-		return ResponseEntity.status(200).body(lDao.listaLezioni(id));
+	@GetMapping("/lezione/{corsoId}")
+	public ResponseEntity<Object> getLezioni(@PathVariable Integer corsoId){
+		return ResponseEntity.status(200).body(lDao.findByCorsoId(corsoId));
 	}
 }
