@@ -19,7 +19,7 @@ public interface CorsoDao extends JpaRepository<Corso, Integer> {
     List<String> findDistinctCategorie();
 
     @EntityGraph(attributePaths = "lezioni")
-    @Query(value = "select c from Corso c")
+    @Query(value = "select c from Corso c order by c.nome asc")
     List<Corso> findAllWithLezioni();
 
 }
