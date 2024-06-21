@@ -9,6 +9,6 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface LezioneDao extends JpaRepository<Lezione,Integer> {
 	
-	@Query(value="select * from lezioni where corso_id = :id", nativeQuery=true)
-	List<Lezione> listaLezioni(Integer id);
+	@Query(value="select * from lezioni where corso_id = :corsoId", nativeQuery=true)
+	List<Lezione> findByCorsoId(Integer corsoId);
 }

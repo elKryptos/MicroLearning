@@ -1,6 +1,7 @@
 package f2.tirocinio.microlearning.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -15,8 +16,8 @@ public class Corso {
     private String nome;
     private String categoria;
 
-    @OneToMany(mappedBy = "corso")
-    @JsonIgnore
+    @OneToMany(mappedBy = "corso", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JsonManagedReference
     List<Lezione> lezioni;
 
     @OneToMany(mappedBy = "corso")

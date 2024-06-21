@@ -23,4 +23,5 @@ export class CategorieComponent {
   getAll(categoria: string): void {
     this.router.navigate(["/categorie", categoria])
   }
-}
+  
+} 

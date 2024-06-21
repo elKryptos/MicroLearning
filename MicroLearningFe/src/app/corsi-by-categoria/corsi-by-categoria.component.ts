@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Corsi } from '../corsi';
 import { ApiService } from '../api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-corsi-by-categoria',
@@ -13,13 +13,10 @@ export class CorsiByCategoriaComponent {
   corsi: Corsi[] = []
   categoria!: string 
 
-
-  constructor(private service: ApiService, private route: ActivatedRoute ) {
-    this.categoria = this.route.snapshot.paramMap.get("categoria")!;
-   }
+  constructor(private service: ApiService, private route: ActivatedRoute, private router: Router ) { }
 
   ngOnInit(): void {
-    
+    this.categoria = this.route.snapshot.paramMap.get("categoria")!;
     this.service.getInsideCategoria(this.categoria).subscribe((data) => {
       this.corsi = data
     })
