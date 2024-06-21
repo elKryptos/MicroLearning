@@ -43,4 +43,16 @@ public class CorsoController {
         List<Corso> corsi = cDao.findAllWithLezioni();
         return ResponseEntity.status(200).body(corsi);
     }
+
+//    @GetMapping("/{nome}")
+//    public ResponseEntity<Object> getByLezione(@PathVariable String nome){
+//
+//        return ResponseEntity.status(200).body("");
+//    }
+//
+//    @GetMapping("/{corso}/{id}")
+//    public ResponseEntity<Object> findByCorsoAndId(@PathVariable String corso, @PathVariable Integer id){
+//
+//        return ResponseEntity.status(200).body("");
+//    }
 }

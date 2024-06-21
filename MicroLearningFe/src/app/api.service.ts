@@ -18,7 +18,7 @@ export class ApiService {
   }
   
   getAll(): Observable<Corsi[]>{
-    return this.http.get<Corsi[]>(`${this.Url}/all`)
+    return this.http.get<Corsi[]>(`${this.Url}/corsi`)
   }
 
   getInsideCategoria(categoria: string): Observable<Corsi[]>{
@@ -28,4 +28,5 @@ export class ApiService {
   getLezioni(id: string): Observable<Lezioni[]> {
     return this.http.get<Lezioni[]>(`${this.Url}/lezione/${id}`)
   }
+
 }
