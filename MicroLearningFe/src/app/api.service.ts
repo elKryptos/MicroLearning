@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Corsi } from './corsi';
+import { Lezioni } from './lezioni';
 
 @Injectable({
   providedIn: 'root'
@@ -24,4 +25,7 @@ export class ApiService {
     return this.http.get<Corsi[]>(`${this.Url}/${categoria}`)
   }
 
+  getLezioni(id: string): Observable<Lezioni[]> {
+    return this.http.get<Lezioni[]>(`${this.Url}/lezione/${id}`)
+  }
 }

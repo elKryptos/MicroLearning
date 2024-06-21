@@ -12,6 +12,7 @@ const routes: Routes = [
   {path: "categorie", component: CategorieComponent}, 
   {path: "corsi", component: CorsiComponent}, 
   {path: "lezioni", component: LezioniComponent},
+  {path: "lezioni/:id", component: LezioniComponent},
   {path: "login", component: LoginComponent}, 
   {path: "categorie/:categoria", component: CorsiByCategoriaComponent},
   {path: "**", redirectTo: "/homepage"}
