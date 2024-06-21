@@ -2,8 +2,10 @@
 
 <p><input type="text" (input)="selectedCorso($event)" placeholder="Cerca: Corso/Categoria"></p>
 <div *ngFor="let c of selectCorsi">
-    <p>Corso: {{c.nome}}</p>
-    <a routerLink=""><p>Categoria: {{c.categoria}}</p></a>
+    <a routerLink="/lezioni"><p>Corso: {{c.nome}}</p></a>
+    <a (click)="CategoriaClick(c.categoria)"><p>(Categoria: {{c.categoria}})</p></a>
+    <p>_____________</p>
 </div>
   
 <p>Da mettere il carrousel da qualche parte qui</p>
+ 
