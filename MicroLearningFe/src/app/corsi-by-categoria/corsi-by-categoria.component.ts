@@ -19,7 +19,12 @@ export class CorsiByCategoriaComponent {
     this.categoria = this.route.snapshot.paramMap.get("categoria")!;
     this.service.getInsideCategoria(this.categoria).subscribe((data) => {
       this.corsi = data
+      console.log(data);
     })
+  }
+
+  onClick(corsoId: number): void {
+    this.router.navigate(["/corsi", corsoId])
   }
 
 }

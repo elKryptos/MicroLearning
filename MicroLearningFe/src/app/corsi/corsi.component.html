@@ -1,5 +1,5 @@
 <div class="cards-container">
-    <div *ngFor="let a of corsi" class="card">
+    <div *ngFor="let a of corsi" class="card" (click)="goToLezione(a.id)">
         <div class="nome">
             <p>{{a.nome}}</p>
         </div>

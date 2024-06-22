@@ -11,6 +11,7 @@ const routes: Routes = [
   {path: "homepage", component: HomepageComponent}, 
   {path: "categorie", component: CategorieComponent}, 
   {path: "corsi", component: CorsiComponent}, 
+  {path: "corsi/:id", component: LezioniComponent}, 
   {path: "lezioni", component: LezioniComponent},
   {path: "lezioni/:id", component: LezioniComponent},
   {path: "login", component: LoginComponent}, 

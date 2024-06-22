@@ -16,10 +16,11 @@ public class CorsoController {
     @Autowired
     CorsoDao cDao;
 
-    @GetMapping("/all")
+    @GetMapping("/corsi")
     public ResponseEntity<Object> all(){
         return ResponseEntity.status(200).body(cDao.findAll());
     }
+
     @GetMapping("/categorie")
     public ResponseEntity<Object> allCategorie(){
         List<String> categorie = cDao.findDistinctCategorie();
@@ -38,11 +39,11 @@ public class CorsoController {
         return ResponseEntity.status(200).body(cDao.findByCategoriaAndNome(categoria, nome));
     }
 
-    @GetMapping("/corsi")
-    public ResponseEntity<Object> getAllWithLezioni(){
-        List<Corso> corsi = cDao.findAllWithLezioni();
-        return ResponseEntity.status(200).body(corsi);
-    }
+//    @GetMapping("/corsi")
+//    public ResponseEntity<Object> getAllWithLezioni(){
+//        List<Corso> corsi = cDao.findAllWithLezioni();
+//        return ResponseEntity.status(200).body(corsi);
+//    }
 
 //    @GetMapping("/{nome}")
 //    public ResponseEntity<Object> getByLezione(@PathVariable String nome){
