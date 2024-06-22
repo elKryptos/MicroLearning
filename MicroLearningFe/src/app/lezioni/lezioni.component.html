@@ -1,9 +1,7 @@
-<p>lezioni works!</p>
-
 <div class = "cards-container">
-    <div *ngFor="let l of lezioni" class="card">
+    <div *ngFor="let l of lezioni" class="card" (click)="goToTesto(l.id)">    
         <div class="nome">
-            <p>{{l.nome}}</p>
+            <p>{{ l.nome }}</p>
         </div>
     </div>
 </div>

@@ -29,4 +29,8 @@ export class ApiService {
     return this.http.get<Lezioni[]>(`${this.Url}/lezione/${id}`)
   }
 
+  getTesto(id: string): Observable<Lezioni[]> {
+    return this.http.get<Lezioni[]>(`${this.Url}/inside/${id}`)
+  }
+
 }

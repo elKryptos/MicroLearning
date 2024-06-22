@@ -11,4 +11,7 @@ public interface LezioneDao extends JpaRepository<Lezione,Integer> {
 	
 	@Query(value="select * from lezioni where corso_id = :corsoId", nativeQuery=true)
 	List<Lezione> findByCorsoId(Integer corsoId);
+
+	@Query(value = "select * from lezioni where id = :id", nativeQuery = true)
+	List<Lezione> findLezioniById(Integer id);
 }

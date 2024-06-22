@@ -12,6 +12,9 @@ public class Lezione {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
+
+    @Lob
+    @Column(columnDefinition = "LONGTEXT")
     private String testo;
     private String immagine;
     private Long tempo;

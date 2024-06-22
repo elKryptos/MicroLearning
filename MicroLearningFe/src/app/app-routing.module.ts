@@ -6,17 +6,18 @@ import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CorsiByCategoriaComponent } from './corsi-by-categoria/corsi-by-categoria.component';
 import { LezioniComponent } from './lezioni/lezioni.component';
+import { TestoComponent } from './testo/testo.component';
 
 const routes: Routes = [
   {path: "homepage", component: HomepageComponent}, 
   {path: "categorie", component: CategorieComponent}, 
   {path: "corsi", component: CorsiComponent}, 
   {path: "corsi/:id", component: LezioniComponent}, 
-  {path: "lezioni", component: LezioniComponent},
   {path: "lezioni/:id", component: LezioniComponent},
+  {path: "testo/:id", component: TestoComponent},
   {path: "login", component: LoginComponent}, 
   {path: "categorie/:categoria", component: CorsiByCategoriaComponent},
-  {path: "**", redirectTo: "/homepage"}
+  //{path: "**", redirectTo: "/homepage"}
 ];
 
 @NgModule({
