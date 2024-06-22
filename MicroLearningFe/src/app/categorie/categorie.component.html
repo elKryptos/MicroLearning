@@ -1,5 +1,5 @@
 <div class="cards-container">
-    <div *ngFor="let categoria of categorie" class="card">
-        <p (click)="getAll(categoria)">{{categoria}}</p>
+    <div *ngFor="let categoria of categorie" class="card" (click)="getAll(categoria)">
+        <p>{{categoria}}</p>
     </div>
 </div>

@@ -1,9 +1,10 @@
 export class Lezioni {
 
     id!: number;
-    immagine!: string;
     nome!: string;
     testo!: string;
+    immagine!: string;
     corsoId!: number;
+    nomeCorso?: string;
     
 }

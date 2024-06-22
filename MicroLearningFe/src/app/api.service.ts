@@ -16,17 +16,21 @@ export class ApiService {
   getCategorie(): Observable<string[]>{
     return this.http.get<string[]>(`${this.Url}/categorie`)
   }
+
+  getInsideCategoria(categoria: string): Observable<Corsi[]>{
+    return this.http.get<Corsi[]>(`${this.Url}/${categoria}`)
+  }
   
   getAll(): Observable<Corsi[]>{
     return this.http.get<Corsi[]>(`${this.Url}/corsi`)
   }
 
-  getInsideCategoria(categoria: string): Observable<Corsi[]>{
-    return this.http.get<Corsi[]>(`${this.Url}/${categoria}`)
-  }
-
   getLezioni(id: string): Observable<Lezioni[]> {
     return this.http.get<Lezioni[]>(`${this.Url}/lezione/${id}`)
+  }
+
+  getTesto(id: string): Observable<Lezioni[]> {
+    return this.http.get<Lezioni[]>(`${this.Url}/inside/${id}`)
   }
 
 }

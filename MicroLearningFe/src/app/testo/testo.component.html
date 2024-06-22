@@ -1,0 +1,8 @@
+<p>testo works!</p>
+<div class="lezioni-container">
+    <div class="lezione" *ngFor="let l of lezione">
+      <h2>{{ l.nome }}</h2>
+      <img [src]="l.immagine" alt="{{ l.nome }}">
+      <p>{{ l.testo }}</p>
+    </div>
+  </div>

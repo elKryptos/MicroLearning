@@ -1,9 +1,12 @@
 <p>Lista dei corsi:</p>
 
 <div class="cards-container">
-    <div *ngFor="let a of corsi" class="card">
+    <div *ngFor="let a of corsi" class="card" (click)="onClick(a.id)">
         <div class="nome">
             <p>{{a.nome}}</p>
+        </div>
+        <div class="categoria">
+            <p>{{a.categoria}}</p>
         </div>
     </div>
 </div>
