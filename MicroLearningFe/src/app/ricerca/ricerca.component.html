@@ -1,0 +1,8 @@
+<p><input type="text" (focus)="showList()" (input)="selectedCorso($event)" #inputElement placeholder="Cerca: Corso/Categoria"></p>
+<div class="bloccoRicerca"[ngStyle]="{display: isShowed? 'flex' : 'none'}">
+    <div   class="corsi" *ngFor="let c of selectCorsi">
+        <a  class="cerca" (click)="goToLezione(c.id)">Corso: <b>{{c.nome}}</b></a><br>
+        <a class="cerca"(click)="CategoriaClick(c.categoria)">({{c.categoria}})</a>
+        <hr>
+    </div>
+</div>
