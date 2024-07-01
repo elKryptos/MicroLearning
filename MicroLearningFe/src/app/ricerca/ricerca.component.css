@@ -1,0 +1,16 @@
+.cerca{
+    cursor: pointer;
+    
+}
+
+.bloccoRicerca{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgb(95, 95, 95);
+    color: rgb(251, 251, 251);
+    font-size: medium;
+    border-radius: 14px;
+    padding:1.5rem 2rem ;
+    gap: 1.1rem;
+}

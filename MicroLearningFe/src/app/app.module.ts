@@ -11,6 +11,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { CorsiByCategoriaComponent } from './corsi-by-categoria/corsi-by-categoria.component';
 import { LezioniComponent } from './lezioni/lezioni.component';
 import { TestoComponent } from './testo/testo.component';
+import { RicercaComponent } from './ricerca/ricerca.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TestoComponent } from './testo/testo.component';
     HomepageComponent,
     CorsiByCategoriaComponent,
     LezioniComponent,
-    TestoComponent
+    TestoComponent,
+    RicercaComponent
   ],
   imports: [
     BrowserModule,

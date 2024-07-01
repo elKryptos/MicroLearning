@@ -11,36 +11,4 @@ import { Router } from '@angular/router';
 })
 export class HomepageComponent {
 
-
-  listCorsi : Corsi[]=[]
-  selectCorsi !: Corsi []
-  categoria : string [] = []
-
-  constructor(private service:ApiService, private router : Router){
-
-  }
-
-  ngOnInit():void{
-    this.service.getAll().subscribe((data)=>{
-      this.listCorsi = data
-      this.selectCorsi = data
-      console.log(data)
-    }) 
-  }
-
-  selectedCorso(event: any){
-    let searchTerm = event.target.value
-    this.selectCorsi = this.listCorsi.filter(el=> {
-      el.nome.toLowerCase().startsWith(searchTerm.toLowerCase()) || 
-      el.categoria.toLowerCase().startsWith(searchTerm.toLowerCase())
-    })
-  }
-
-  CategoriaClick(categoria: string){
-    
-    this.router.navigate(["/categorie", categoria])
-
-  }
-
-
 }

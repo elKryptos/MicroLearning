@@ -7,6 +7,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { CorsiByCategoriaComponent } from './corsi-by-categoria/corsi-by-categoria.component';
 import { LezioniComponent } from './lezioni/lezioni.component';
 import { TestoComponent } from './testo/testo.component';
+import { RicercaComponent } from './ricerca/ricerca.component';
 
 const routes: Routes = [
   {path: "homepage", component: HomepageComponent}, 
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: "testo/:id", component: TestoComponent},
   {path: "login", component: LoginComponent}, 
   {path: "categorie/:categoria", component: CorsiByCategoriaComponent},
+  {path:"ricerca", component: RicercaComponent},
   //{path: "**", redirectTo: "/homepage"}
 ];
 
